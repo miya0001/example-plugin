@@ -12,6 +12,9 @@
  * @package         Example_Plugin
  */
 
+/**
+ * This is a function!!
+ */
 function hello() {
 	return true;
 }
