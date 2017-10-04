@@ -10,5 +10,6 @@ jobs:
           PATH: $HOME/.composer/vendor/bin:$PATH
 
   steps:
+    - checkout
     - run: sudo apt-get update; sudo apt-get install subversion
     - run: composer global require "phpunit/phpunit=5.7.*"
