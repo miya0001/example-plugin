@@ -18,7 +18,7 @@ jobs:
     steps:
       - run: echo 'export PATH=/$HOME/.composer/vendor/bin:$PATH' >> $BASH_ENV
       - checkout
-      - run: sudo apt update && sudo apt install -y subversion
+      - run: sudo apt update && sudo apt install -y subversion mysql-server
       - run: composer global require "phpunit/phpunit=5.7.*"
       - run: |
           composer global require wp-coding-standards/wpcs
