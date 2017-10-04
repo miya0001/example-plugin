@@ -4,10 +4,10 @@ jobs:
   build:
     docker:
       - image: circleci/php:5.6.22
-    environment:
-      WP_TESTS_DIR: /tmp/wordpress-tests-lib
-      WP_CORE_DIR: /tmp/wordpress/
-      PATH: $HOME/.composer/vendor/bin:$PATH
+        environment:
+          WP_TESTS_DIR: /tmp/wordpress-tests-lib
+          WP_CORE_DIR: /tmp/wordpress/
+          PATH: $HOME/.composer/vendor/bin:$PATH
 
 dependencies:
   pre:
