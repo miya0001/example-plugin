@@ -2,19 +2,13 @@ version: 2
 
 jobs:
   build:
-    docker:
-      - image: circleci/php:5.6
-        environment:
-          WP_TESTS_DIR: /tmp/wordpress-tests-lib
-          WP_CORE_DIR: /tmp/wordpress/
-      - image: circleci/php:7.0
-        environment:
-          WP_TESTS_DIR: /tmp/wordpress-tests-lib
-          WP_CORE_DIR: /tmp/wordpress/
-      - image: circleci/php:7.1
-        environment:
-          WP_TESTS_DIR: /tmp/wordpress-tests-lib
-          WP_CORE_DIR: /tmp/wordpress/
+    machine:
+      php:
+        version: 5.6.22
+      environment:
+        WP_TESTS_DIR: /tmp/wordpress-tests-lib
+        WP_CORE_DIR: /tmp/wordpress/
+        PATH: $HOME/.composer/vendor/bin:$PATH
     steps:
       - run: echo 'export PATH=/$HOME/.composer/vendor/bin:$PATH' >> $BASH_ENV
       - checkout
