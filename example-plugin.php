@@ -11,3 +11,7 @@
  *
  * @package         Example_Plugin
  */
+
+function hello() {
+	return true;
+}
