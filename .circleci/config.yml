@@ -10,9 +10,5 @@ jobs:
           PATH: $HOME/.composer/vendor/bin:$PATH
 
   steps:
-    - run:
-        name: Install dependencies.
-        command: sudo apt-get update; sudo apt-get install subversion
-    - run:
-        name: Install `phpunit` and `phpcs`
-        command: composer global require "phpunit/phpunit=5.7.*"
+    - run: sudo apt-get update; sudo apt-get install subversion
+    - run: composer global require "phpunit/phpunit=5.7.*"
