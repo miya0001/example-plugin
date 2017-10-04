@@ -4,6 +4,11 @@ jobs:
   build:
     docker:
       - image: circleci/php:7.1.8-browsers
+        environment:
+          WP_TESTS_DIR: /tmp/wordpress-tests-lib
+          WP_CORE_DIR: /tmp/wordpress/
+          PATH: $HOME/.composer/vendor/bin:$PATH
     steps:
       - checkout
-      - run: sudo apt install -y subversion
+      - run: sudo apt update && sudo apt install -y subversion
+      - run: composer global require "phpunit/phpunit=5.7.*"
